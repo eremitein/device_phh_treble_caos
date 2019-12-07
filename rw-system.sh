@@ -504,6 +504,15 @@ for ev in $(cd /sys/class/input;echo event*);do
 	fi
 done
 
+# allow dt2w on some xiaomi devices
+if [ -f "/proc/touchpanel/wakeup_gesture" ]; then
+  chown root:system /proc/touchpanel/wakeup_gesture
+  chmod 664 /proc/touchpanel/wakeup_gesture
+elif [ -f "/proc/tp_wakeup_gesture" ]; then
+  chown root:system /proc/tp_wakeup_gesture
+  chmod 664 /proc/tp_wakeup_gesture
+fi
+
 has_hostapd=false
 for i in odm oem vendor product;do
     if grep -qF android.hardware.wifi.hostapd /$i/etc/vintf/manifest.xml;then
