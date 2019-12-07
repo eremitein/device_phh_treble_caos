@@ -1,0 +1,7 @@
+type sysfs_dt2w, file_type;
+
+# allow treble_app access to:
+#  /proc/tp_wakeup_gesture
+#  /proc/touchpanel/wakeup_gesture
+allow system_app proc:file rw_file_perms;
+allow system_app sysfs:file rw_file_perms;
