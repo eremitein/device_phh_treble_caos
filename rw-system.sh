@@ -499,7 +499,7 @@ fi
 
 #Try to detect DT2W
 for ev in $(cd /sys/class/input;echo event*);do
-	if [ -f "/sys/class/input/$ev/device/device/gesture_mask" ];then
+	if [ $(ls /sys/class/input/${ev}/device/device/ |grep -m1 gesture) ]; then
 		setprop persist.sys.phh.dt2w_evnode /dev/input/$ev
 	fi
 done
