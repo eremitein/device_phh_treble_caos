@@ -1,0 +1,4 @@
+# getenforce: type=1400 audit(0.0:111): avc: denied { read } for name="enforce"
+# dev="selinuxfs" ino=4 scontext=u:r:system_app:s0
+# tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0
+allow system_app selinuxfs:file r_file_perms;
