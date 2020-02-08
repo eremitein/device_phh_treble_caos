@@ -119,11 +119,11 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Universal NoCutoutOverlay
 PRODUCT_PACKAGES += \
-    NoCutoutOverlay
+	NoCutoutOverlay
 
 PRODUCT_PACKAGES += \
-    lightsctl \
-    uevent
+	lightsctl \
+	uevent
 
 PRODUCT_COPY_FILES += \
 	device/phh/treble/files/adbd.rc:system/etc/init/adbd.rc
@@ -148,10 +148,19 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.secure_lock_screen.xml:system/etc/permissions/android.software.secure_lock_screen.xml \
 
 PRODUCT_COPY_FILES += \
-        device/phh/treble/ld.config.26.txt:system/etc/ld.config.26.txt \
+	device/phh/treble/ld.config.26.txt:system/etc/ld.config.26.txt \
 
 PRODUCT_PACKAGES += \
-    asus-motor
+	asus-motor
+
+# additional utils
+PRODUCT_PACKAGES += \
+	7z \
+	lib7z \
+	fsck.ntfs \
+	mkfs.ntfs \
+	mount.ntfs \
+	vim
 
 # Privapp-permissions whitelist for PhhTrebleApp
 PRODUCT_COPY_FILES += \
